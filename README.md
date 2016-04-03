@@ -1,6 +1,6 @@
 # RubyCleverbot
 
-TODO: Delete this and the text above, and describe your gem
+A simple gem to talk with CleverBot
 
 ## Installation
 
