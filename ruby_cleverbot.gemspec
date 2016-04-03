@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{A simple gem to talk with CleverBot}
   spec.description   = %q{This gem is to send messages to cleverbot a get the responses.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/radthebrown/ruby_cleverbot"
   spec.license       = "MIT"
 
   spec.files         = %w(
