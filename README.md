@@ -1,4 +1,4 @@
-# RubyCleverbot
+# RubyCleverbot [![Gem Version](https://badge.fury.io/rb/ruby_cleverbot.svg)](https://badge.fury.io/rb/ruby_cleverbot)
 
 A simple gem to talk with CleverBot
 
