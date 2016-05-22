@@ -11,7 +11,7 @@ require 'htmlentities'
 class RubyCleverbot
 
   HOST = 'http://www.cleverbot.com'.freeze
-  RESOURCE = '/webservicemin'.freeze
+  RESOURCE = '/webservicemin?uc=165&'.freeze
   API_URL = HOST + RESOURCE
 
   HEADERS = {
