@@ -1,7 +1,6 @@
 require 'rest-client'
 require 'open-uri'
 require 'digest'
-require 'htmlentities'
 
 # for debug -> mitmproxy
 # PROXY = 'http://127.0.0.1:8080'
@@ -17,8 +16,8 @@ class RubyCleverbot
   HEADERS = {
       'user_agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.7',
-      'Accept-Language': 'en-us,en;q=0.8,en-us;q=0.5,en;q=0.3',
+      'Accept-Charset': 'utf-8,*;q=0.7',
+      'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4,de;q=0.2',
       'Cache-Control': 'no-cache',
       'Pragma': 'no-cache'
   }
@@ -26,10 +25,8 @@ class RubyCleverbot
   attr_reader :cookies
   attr_reader :data
   attr_reader :conversation
-  attr_reader :coder
 
-  def initialize
-    @coder = HTMLEntities.new
+  def initialize(lang='ru')
     @data = {
         'stimulus': '',
         'start': 'y',
@@ -45,7 +42,7 @@ class RubyCleverbot
         'icognocheck': '',
         'fno': 0,
         'prevref': '',
-        'cb_settings_language': 'es',
+        'cb_settings_language': lang,
         'emotionaloutput': '',
         'emotionalhistory': '',
         'asbotname': '',
@@ -91,7 +88,7 @@ class RubyCleverbot
     clever_response = response.to_str.split(/[\r]+/)
 
     # see HTML encoding of foreign language characters
-    clever_response[0] = coder.decode(clever_response[0])
+    clever_response[0] = clever_response[0].force_encoding('UTF-8')
 
     # add the log
     conversation << question
