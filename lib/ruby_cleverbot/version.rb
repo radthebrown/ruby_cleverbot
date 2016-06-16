@@ -1,3 +1,3 @@
 module RubyCleverbot
-  VERSION = "0.1.1.russian"
+  VERSION = "0.1.2"
 end
