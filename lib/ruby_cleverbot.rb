@@ -10,7 +10,7 @@ require 'digest'
 class RubyCleverbot
 
   HOST = 'http://www.cleverbot.com'.freeze
-  RESOURCE = '/webservicemin?uc=165&'.freeze
+  RESOURCE = '/webservicemin?uc=321&'.freeze
   API_URL = HOST + RESOURCE
 
   HEADERS = {
