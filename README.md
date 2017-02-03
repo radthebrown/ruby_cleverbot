@@ -23,7 +23,7 @@ Or install it yourself as:
 ```ruby
 require 'ruby_cleverbot'
 
-c = RubyCleverbot.new()
+c = RubyCleverbot.new('HelloBot')
 
 puts c.send_message('hi') #=> "Hello."
 ```
