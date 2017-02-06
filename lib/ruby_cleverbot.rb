@@ -10,8 +10,7 @@ require 'digest'
 class RubyCleverbot
 
   HOST = 'http://www.cleverbot.com'.freeze
-  RESOURCE = '/webservicemin?uc=321&'.freeze
-  API_URL = HOST + RESOURCE
+  RESOURCE = 'webservicemin'.freeze
 
   HEADERS = {
       'user_agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
@@ -26,7 +25,9 @@ class RubyCleverbot
   attr_reader :data
   attr_reader :conversation
 
-  def initialize(lang='ru')
+  def initialize(botapi, lang: 'ru', uc: '3210')
+    @api_url = "#{HOST}/#{RESOURCE}?uc=#{uc}&botapi=#{botapi}"
+
     @data = {
         'stimulus': '',
         'start': 'y',
@@ -83,7 +84,7 @@ class RubyCleverbot
     data[:icognocheck] = token
     # puts "the token is #{data[:icognocheck]}"
 
-    response = make_post(API_URL, data)
+    response = make_post(@api_url, data)
 
     clever_response = response.to_str.split(/[\r]+/)
 
