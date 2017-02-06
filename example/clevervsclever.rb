@@ -1,8 +1,8 @@
 require 'ruby_cleverbot'
 
 if ARGV[0] != nil
-  bot1 = RubyCleverbot.new
-  bot2 = RubyCleverbot.new
+  bot1 = RubyCleverbot.new('helloBot')
+  bot2 = RubyCleverbot.new('helloBot')
   seed = ARGV[0]
   message1 = bot1.send_message(seed)
   8.times{
