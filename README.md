@@ -2,6 +2,8 @@
 
 A simple gem to talk with CleverBot
 
+**Cleverbot is now offering an official Cleverbot API at www.cleverbot.com/api. This gem wont be updated anymore.**
+
 ## Installation
 
 Add this line to your application's Gemfile:
